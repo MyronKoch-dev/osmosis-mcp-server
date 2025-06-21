@@ -1,0 +1,76 @@
+{
+  "name": "@myronkoch/osmosis-mcp-server",
+  "version": "1.0.0",
+  "description": "A comprehensive MCP server for interacting with the Osmosis blockchain - 158 tools covering DeFi, staking, governance, and more",
+  "type": "module",
+  "main": "./build/index.js",
+  "bin": {
+    "osmosis-mcp-server": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE",
+    "FINAL_TEST_REPORT.md",
+    "TESTING.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js",
+    "start-simple": "node simple-server.js",
+    "test": "node test-server.js",
+    "dev": "tsc --watch",
+    "inspect": "npx @modelcontextprotocol/inspector simple-server.js",
+    "inspect-ts": "npx @modelcontextprotocol/inspector build/index.js",
+    "inspect-full": "npm run build && npx @modelcontextprotocol/inspector build/index.js",
+    "test-tools": "node test-tools.js",
+    "validate": "npm run build && npm run test && npm run inspect-full",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": [
+    "osmosis",
+    "blockchain",
+    "mcp",
+    "model-context-protocol",
+    "defi",
+    "cosmos",
+    "dex",
+    "liquidity",
+    "staking",
+    "governance",
+    "ai",
+    "claude",
+    "trading",
+    "concentrated-liquidity",
+    "superfluid"
+  ],
+  "author": "Myron Koch <myronkoch@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myronkoch/osmosis-mcp-server.git"
+  },
+  "homepage": "https://github.com/myronkoch/osmosis-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/myronkoch/osmosis-mcp-server/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@cosmjs/amino": "^0.33.1",
+    "@cosmjs/crypto": "^0.33.1",
+    "@cosmjs/proto-signing": "^0.33.1",
+    "@cosmjs/stargate": "^0.31.3",
+    "@cosmjs/tendermint-rpc": "^0.33.1",
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "@osmonauts/lcd": "^1.0.3",
+    "axios": "^1.6.0",
+    "osmojs": "^16.15.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
